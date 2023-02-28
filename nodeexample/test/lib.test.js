@@ -24,5 +24,7 @@ describe("Testing lib module", () => {
         expect(res[0]).to.equal(6);
         expect(res[1]).to.equal(2);
         expect(res[2]).to.equal(10);
+        expect(res[3]).to.equal(4);
+        expect(res[4]).to.equal(8);
     });
 })

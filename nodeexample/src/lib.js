@@ -67,5 +67,6 @@ function memo(fn) {
 module.exports = {
     forEach,
     filter,
-    map
+    map,
+    memo
 }
