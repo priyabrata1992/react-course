@@ -7,11 +7,11 @@
 */  
 
 //Pure function: forEach
-function forEach(elems) {
-    for(i = 0; i < elems.length; i++) {
-        console.log(elems[i]);
-    }
-}
+// function forEach(elems) {
+//     for(i = 0; i < elems.length; i++) {
+//         console.log(elems[i]);
+//     }
+// }
 
 // Higher order equivalent: forEach
 function forEach(elems, action) {
