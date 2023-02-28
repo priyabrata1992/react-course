@@ -32,6 +32,33 @@ function filter(elements, predicate) {
     return result;
 }
 
+function map(elements, transformFn) {
+    let result = [];
+    forEach(elements, function (e) {
+        result.push(transformFn(e));
+    })
+    return result;
+}
+
+//Function returning another function
+//Closure --> Inner function can access all members of outer function
+//Can be useful for implementing memoization.
+function adder(base) {
+    return function (value) {
+        return base + value;
+    }
+}
+
+function memo(fn) {
+    const cache = {}
+    return function (args) {
+        if (!cache[args]) {
+            cache[args] = fn(args);
+        }
+        return cache[args];
+    }
+}
+
 /* 
     Everything is private by default
     in order to make it public, it needs to be exported.
@@ -39,5 +66,6 @@ function filter(elements, predicate) {
 
 module.exports = {
     forEach,
-    filter
+    filter,
+    map
 }

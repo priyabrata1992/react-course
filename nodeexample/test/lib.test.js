@@ -1,5 +1,5 @@
 let { expect } = require('chai');
-let { forEach, filter } = require('../src/lib');
+let { forEach, filter, map } = require('../src/lib');
 
 //Test Suite
 describe("Testing lib module", () => {
@@ -16,5 +16,13 @@ describe("Testing lib module", () => {
         const predicate = jest.fn(x => x % 2 === 0);
         var res = filter([3, 1, 5, 2, 4], predicate);
         expect(res.length).to.equal(2);
+    });
+    it("testing map", () => {
+        const transformFn = jest.fn(x => x * 2);
+        var res = map([3, 1, 5, 2, 4], transformFn);
+        expect(res.length).to.equal(5);
+        expect(res[0]).to.equal(6);
+        expect(res[1]).to.equal(2);
+        expect(res[2]).to.equal(10);
     });
 })
