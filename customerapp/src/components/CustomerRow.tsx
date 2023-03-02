@@ -2,7 +2,8 @@ import { ReactNode, Component } from "react";
 import Customer from "../model/Customer";
 
 type Props = {
-    customer: Customer
+    customer: Customer,
+    onDeletePressed: (id:number) => void
 }
 
 export default class CustomerRow extends Component<Props, {}> {
@@ -12,12 +13,12 @@ export default class CustomerRow extends Component<Props, {}> {
         return (
             <div>
                 { firstName } &nbsp; { lastName } &nbsp;
-                <button type="button" onClick={this.onClick}>Delete</button>
+                <button type="button" onClick={() => {this.onClick(id)}}>Delete</button>
             </div>
         )
     }
 
-    onClick() {
-        alert('Works!');
+    onClick = (id:number):void => {
+        this.props.onDeletePressed(id)
     }
 }
